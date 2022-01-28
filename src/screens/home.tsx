@@ -7,6 +7,7 @@ type RootStackParamList = {
   Screen1: undefined;
   Screen2: undefined;
   Screen3: undefined;
+  Screen4: undefined;
 };
 type Props = NativeStackScreenProps<RootStackParamList>;
 
@@ -33,6 +34,13 @@ const Home = ({navigation, route}: Props) => {
           navigation.navigate('Screen3');
         }}>
         <Text style={styles?.buttonText}>Screen 3</Text>
+      </Pressable>
+      <Pressable
+        style={styles.buttonStyle}
+        onPress={() => {
+          navigation.navigate('Screen4');
+        }}>
+        <Text style={styles?.buttonText}>Screen 4</Text>
       </Pressable>
     </View>
   );
