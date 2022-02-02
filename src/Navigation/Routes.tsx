@@ -1,10 +1,20 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Home, Screen1, Screen2, Screen3, Screen4, Screen5} from '../screens';
+import {
+  Home,
+  Screen1,
+  Screen2,
+  Screen3,
+  Screen4,
+  Screen5,
+  Screen6,
+  Screen6Item,
+} from '../screens';
+import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
 
 //stack creation for navigation
-const Stack = createNativeStackNavigator();
+const Stack = createSharedElementStackNavigator();
 
 function Routes() {
   return (
@@ -19,6 +29,13 @@ function Routes() {
         <Stack.Screen name="Screen3" component={Screen3}></Stack.Screen>
         <Stack.Screen name="Screen4" component={Screen4}></Stack.Screen>
         <Stack.Screen name="Screen5" component={Screen5}></Stack.Screen>
+        <Stack.Screen name="Screen6" component={Screen6}></Stack.Screen>
+        <Stack.Screen
+          name="Screen6Item"
+          component={Screen6Item}
+          sharedElements={routes => {
+            return [routes.params.url];
+          }}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

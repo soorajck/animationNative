@@ -24,7 +24,9 @@ const Screen2 = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.headerText}>Progress Bar</Text>
+      <View style={styles.heading}>
+        <Text style={styles.headingText}>Loader </Text>
+      </View>
 
       <View style={styles.progressBarContainer}>
         <Animated.View
@@ -122,6 +124,18 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 10,
     textAlign: 'center',
+  },
+  heading: {
+    marginBottom: 20,
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+    position: 'absolute',
+    top: 20,
+  },
+  headingText: {
+    fontSize: 30,
+    fontWeight: 'bold',
   },
 });
 

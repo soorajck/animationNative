@@ -122,7 +122,7 @@ const Square = ({scrollX}: any) => {
         borderRadius: 84,
         position: 'absolute',
         top: -height * 0.6,
-        left: -height * 0.2,
+        left: -height * 0.25,
         transform: [
           {
             rotate,

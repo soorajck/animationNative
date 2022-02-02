@@ -1,6 +1,6 @@
 import {View, Text, StyleSheet, Pressable, Animated} from 'react-native';
 import React, {useRef} from 'react';
-
+import {SharedElement} from 'react-navigation-shared-element';
 const Screen1 = () => {
   const value = useRef(new Animated.Value(0)).current;
 
@@ -26,6 +26,12 @@ const Screen1 = () => {
 
   return (
     <View style={styles.container}>
+      <View style={styles.heading}>
+        <SharedElement id="bounce">
+          <Text style={styles.headingText}>Bounce </Text>
+        </SharedElement>
+      </View>
+
       <Animated.View style={[{transform: [{translateY: value}]}]}>
         <Pressable onPress={handlePress} style={[styles.buttonContainer]}>
           <Text style={styles.buttonText}>Click Me</Text>
@@ -55,6 +61,18 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignContent: 'center',
+  },
+  heading: {
+    marginBottom: 20,
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+    position: 'absolute',
+    top: 20,
+  },
+  headingText: {
+    fontSize: 30,
+    fontWeight: 'bold',
   },
 });
 

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {View, Text, StyleSheet, Pressable} from 'react-native';
+import {View, Text, StyleSheet, Pressable, Image} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 type RootStackParamList = {
@@ -9,6 +9,7 @@ type RootStackParamList = {
   Screen3: undefined;
   Screen4: undefined;
   Screen5: undefined;
+  Screen6: undefined;
 };
 type Props = NativeStackScreenProps<RootStackParamList>;
 
@@ -20,35 +21,42 @@ const Home = ({navigation, route}: Props) => {
         onPress={() => {
           navigation.navigate('Screen1');
         }}>
-        <Text style={styles?.buttonText}>Screen 1</Text>
+        <Text style={styles?.buttonText}>Bounce</Text>
       </Pressable>
       <Pressable
         style={styles.buttonStyle}
         onPress={() => {
           navigation.navigate('Screen2');
         }}>
-        <Text style={styles?.buttonText}>Screen 2</Text>
+        <Text style={styles?.buttonText}>Loader</Text>
       </Pressable>
       <Pressable
         style={styles.buttonStyle}
         onPress={() => {
           navigation.navigate('Screen3');
         }}>
-        <Text style={styles?.buttonText}>Screen 3</Text>
+        <Text style={styles?.buttonText}>Scroll Image</Text>
       </Pressable>
       <Pressable
         style={styles.buttonStyle}
         onPress={() => {
           navigation.navigate('Screen4');
         }}>
-        <Text style={styles?.buttonText}>Screen 4</Text>
+        <Text style={styles?.buttonText}>Carousel</Text>
       </Pressable>
       <Pressable
         style={styles.buttonStyle}
         onPress={() => {
           navigation.navigate('Screen5');
         }}>
-        <Text style={styles?.buttonText}>Screen 5</Text>
+        <Text style={styles?.buttonText}>Landing page</Text>
+      </Pressable>
+      <Pressable
+        style={styles.buttonStyle}
+        onPress={() => {
+          navigation.navigate('Screen6');
+        }}>
+        <Text style={styles?.buttonText}>Shared Animation </Text>
       </Pressable>
     </View>
   );
@@ -74,6 +82,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     color: 'white',
+    width: '50%',
   },
   buttonText: {
     color: 'white',
