@@ -12,6 +12,7 @@ import {
   Screen6Item,
 } from '../screens';
 import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
+import {TransitionSpecs} from '@react-navigation/stack';
 
 //stack creation for navigation
 const Stack = createSharedElementStackNavigator();
@@ -35,7 +36,24 @@ function Routes() {
           component={Screen6Item}
           sharedElements={routes => {
             return [routes.params.url];
-          }}></Stack.Screen>
+          }}
+          options={() => ({
+            gestureEnabled: false,
+            transitionSpec: {
+              open: {
+                animation: 'timing',
+                config: {
+                  duration: 700,
+                },
+              },
+              close: {
+                animation: 'timing',
+                config: {
+                  duration: 300,
+                },
+              },
+            },
+          })}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
